@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# check for initial install file and copy default if needed
+[[ ! -f "/config/data/koken/index.php" ]] && \
+    mkdir -p /config/www/koken && \
+    cp /app/koken/index.php /config/www/koken/index.php
+
+# permissions
+chown -R abc:abc \
+	/config

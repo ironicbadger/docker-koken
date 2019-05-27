@@ -1,0 +1,18 @@
+---
+version: "2"
+services:
+  koken:
+    image: koken
+    container_name: koken
+    ports:
+      - 80:80
+  mysql:
+    image: mariadb
+    container_name: mysql
+    # volumes:
+    #   - /mnt/tank/appdata/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=koken
+      - MYSQL_PASSWORD=koken
+      - MYSQL_DATABASE=koken
+      - MYSQL_USER=koken
